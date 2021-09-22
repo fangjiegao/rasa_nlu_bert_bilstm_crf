@@ -1,0 +1,16 @@
+language: "zh"
+
+pipeline:
+  - name: "custom.nlu.tokenizers.bret_tokenizer.BertTokenizer"
+  - name: "LanguageModelFeaturizer"
+    # Name of the language model to use
+    model_name: "bert"
+    # Pre-Trained weights to be loaded
+    # model_weights: "bert-base-chinese"
+    model_weights: "data/bert-checkpoint/chinese_L-12_H-768_A-12"
+    cache_dir: "data/bert-checkpoint/chinese_L-12_H-768_A-12"
+  - name: "custom.nlu.extractors.bert_lstm_crf_extractor.bert_lstm_crf_model.BiLstmCrfForBert"
+    epoch_num: 10
+    optimizer: "adam"
+    vocab_path: "data/bert-checkpoint/chinese_L-12_H-768_A-12/vocab.txt"
+    data_dir: "data/entity/example"
