@@ -12,12 +12,16 @@ requirements.txt
 
 #训练
 rasa train nlu  -c configs/config_entity.yml -u data/entity/example -vv  # 预先安装rasa
+
 rasa_bert_bilstm_crf/rasa/__main__.py train nlu  -c configs/config_entity.yml -u data/entity/example -vv
+
 rasa train nlu  -c configs/config_entity_v1.yml -u data/entity/example -vv  # 预先安装rasa
+
 rasa_bert_bilstm_crf/rasa/__main__.py train nlu  -c configs/config_entity_v1.yml -u data/entity/example -vv
 
 #启动服务
 rasa run -m models --log-file log.log -vv --port 5007 --enable-api --credentials configs/channel.yml
+
 rasa_bert_bilstm_crf/rasa/__main__.py run -m models --log-file log.log -vv --port 5007 --enable-api --credentials configs/channel.yml
 
 #测试服务
