@@ -1,0 +1,8 @@
+language: "zh"
+
+pipeline:
+  # - name: "custom.nlu.tokenizers.bret_tokenizer.BertTokenizer"
+  - name: "custom.nlu.extractors.TFBert_extractor.TFbert_lstm_crf_model.TFBiLstmCrfForBert"
+    data_dir: "data/entity/example"
+    model_weights: "data/bert-checkpoint/chinese_L-12_H-768_A-12"
+    epoch_num: 10

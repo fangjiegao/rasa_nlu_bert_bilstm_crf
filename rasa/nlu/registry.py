@@ -22,6 +22,7 @@ from rasa.nlu.extractors.spacy_entity_extractor import SpacyEntityExtractor
 from rasa.nlu.extractors.regex_entity_extractor import RegexEntityExtractor
 from custom.nlu.extractors.bert_lstm_crf_extractor.bert_lstm_crf_model_v1 import BiLstmCrfForBert_v1
 from custom.nlu.extractors.bert_lstm_crf_extractor.bert_lstm_crf_model import BiLstmCrfForBert
+from custom.nlu.extractors.TFBert_extractor.TFbert_lstm_crf_model import TFBiLstmCrfForBert
 from rasa.nlu.featurizers.sparse_featurizer.lexical_syntactic_featurizer import (
     LexicalSyntacticFeaturizer,
 )
@@ -83,6 +84,7 @@ component_classes = [
     RegexEntityExtractor,
     BiLstmCrfForBert,
     BiLstmCrfForBert_v1,
+    TFBiLstmCrfForBert,
     # featurizers
     SpacyFeaturizer,
     MitieFeaturizer,
