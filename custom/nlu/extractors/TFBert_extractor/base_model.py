@@ -135,7 +135,10 @@ class TFBertBasesModel(TFBertForTokenClassification):
 
                 if os.path.exists(TFBertBasesModel._instance.model_path):
                     # TFBertBasesModel._instance(TFBertBasesModel._instance.dummy_inputs, training=False)
-                    TFBertBasesModel._instance(for_call_data, training=False)   # 这个training感觉没啥用
+                    if len(args) > 1:
+                        TFBertBasesModel._instance(for_call_data,  training=args[1].get("training", False))   # 这个training感觉没啥用
+                    else:
+                        TFBertBasesModel._instance(for_call_data, training=False)
                     # TFBertBasesModel._instance(for_call_data, training=True)
                     # TFBertBasesModel._instance.build([None, None, len(labelid2tag)])  # doesn't work
                     TFBertBasesModel._instance.load_weights(TFBertBasesModel._instance.model_path)

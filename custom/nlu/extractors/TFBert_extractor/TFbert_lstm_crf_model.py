@@ -31,7 +31,7 @@ class TFBiLstmCrfForBert(EntityExtractor):
               config: Optional[RasaNLUModelConfig] = None,
               **kwargs: Any, ) -> None:
 
-        self.model, self.label2tag = TFBertBasesModel.instance(self.component_config)
+        self.model, self.label2tag = TFBertBasesModel.instance(self.component_config, {"training": True})
 
         # 通过词典导入分词器
         self.tokenizer = BertTokenizer.from_pretrained(TFBertBasesModel.VOCAB_PATH)
