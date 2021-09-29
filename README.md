@@ -1,11 +1,11 @@
-## 环境
+# 环境
 rasa 2.7.2
 
 python3.6.5
 
 requirements.txt
 
-## 功能
+# 功能
 基于rasa的实现使用bert特征构建bilstm+crf模型实现序列标注任务
 
 为了使用离线特征修改部分源码
@@ -41,7 +41,7 @@ tf.compat.v1.enable_v2_behavior()
 tf.compat.v1.disable_v2_behavior()
 的用法
 
-# 怎加基于tf2的bert语言模型的fine tune版本
+# 增加基于tf2的bert语言模型的fine tune版本
 ## 训练
 rasa train nlu  -c configs/config_entity_TF.yml -u data/entity/example -vv  # 预先安装rasa
 
