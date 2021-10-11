@@ -33,7 +33,7 @@ python custom/client.py
 <br>2、基于tensorflow 2.x</br>
 
 # 结论
-tensorflow 1.x的代码和rasa框架无法兼容，可赢正常训练和启动服务，但在调取服务后会出现重大的bug无法解决。
+tensorflow 1.x的代码和rasa框架无法兼容，可正常训练和启动服务，但在调取服务后会出现重大的bug无法解决。
 具体原因参考：
 
 tf.compat.v1.enable_v2_behavior()
